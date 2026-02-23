@@ -111,8 +111,8 @@ export default function HomePage() {
               className="logo-img"
               src="/logo-rmsf-transparent.png"
               alt="Rimasanfer"
-              width={252}
-              height={60}
+              width={315}
+              height={75}
               priority
             />
             <span className="logo-text-fallback">RIMASANFER LTD</span>
@@ -286,11 +286,10 @@ export default function HomePage() {
               className="footer-logo"
               src="/logo-rmsf-transparent.png"
               alt="Rimasanfer"
-              width={190}
-              height={45}
+              width={248}
+              height={59}
             />
-            <p className="footer-brand-name">Rimasanfer Ltd</p>
-            <p className="muted">Business Management &amp; Business Development Consulting</p>
+            <p className="muted footer-tagline">Business Management &amp; Business Development Consulting</p>
           </div>
           <div className="footer-links">
             <a href="#top">Home</a>
