@@ -286,8 +286,8 @@ export default function HomePage() {
               className="footer-logo"
               src="/logo-rmsf-transparent.png"
               alt="Rimasanfer"
-              width={248}
-              height={59}
+              width={190}
+              height={45}
             />
             <p className="muted footer-tagline">Business Management &amp; Business Development Consulting</p>
           </div>
