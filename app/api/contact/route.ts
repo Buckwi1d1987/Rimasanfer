@@ -97,23 +97,39 @@ export async function POST(request: NextRequest) {
     <p><small>IP: ${ip}</small></p>
   `;
 
-  const emailResponse = await fetch("https://api.resend.com/emails", {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${resendApiKey}`,
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({
-      from: fromEmail,
-      to: [toEmail],
-      subject: "New inquiry from rimasanfer.com",
-      reply_to: email,
-      html
-    })
-  });
+  async function sendEmail(from: string) {
+    return fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${resendApiKey}`,
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        from,
+        to: [toEmail],
+        subject: "New inquiry from rimasanfer.com",
+        reply_to: email,
+        html
+      })
+    });
+  }
+
+  let emailResponse = await sendEmail(fromEmail);
+  if (!emailResponse.ok && fromEmail !== "Rimasanfer Website <onboarding@resend.dev>") {
+    emailResponse = await sendEmail("Rimasanfer Website <onboarding@resend.dev>");
+  }
 
   if (!emailResponse.ok) {
-    return NextResponse.json({ error: "Failed to send" }, { status: 502 });
+    let providerError = "";
+    try {
+      providerError = await emailResponse.text();
+    } catch {
+      providerError = "";
+    }
+    return NextResponse.json(
+      { error: "Failed to send", providerStatus: emailResponse.status, providerError },
+      { status: 502 }
+    );
   }
 
   return NextResponse.json({ ok: true }, { status: 200 });
