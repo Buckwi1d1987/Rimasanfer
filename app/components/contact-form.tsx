@@ -6,21 +6,31 @@ type SubmitState = "idle" | "submitting" | "success" | "error";
 
 export default function ContactForm() {
   const [state, setState] = useState<SubmitState>("idle");
+  const [startedAt] = useState(() => Date.now());
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const form = event.currentTarget;
     const formData = new FormData(form);
 
+    const payload = {
+      name: String(formData.get("Name") ?? ""),
+      company: String(formData.get("Company") ?? ""),
+      email: String(formData.get("Email") ?? ""),
+      message: String(formData.get("Message") ?? ""),
+      honey: String(formData.get("_honey") ?? ""),
+      startedAt
+    };
+
     setState("submitting");
 
     try {
-      const response = await fetch("https://formsubmit.co/ajax/manuel@rimasanfer.com", {
+      const response = await fetch("/api/contact", {
         method: "POST",
         headers: {
-          Accept: "application/json"
+          "Content-Type": "application/json"
         },
-        body: formData
+        body: JSON.stringify(payload)
       });
 
       if (!response.ok) {
@@ -37,8 +47,6 @@ export default function ContactForm() {
   return (
     <form className="contact-form" onSubmit={handleSubmit}>
       <input type="text" name="_honey" className="hidden-field" tabIndex={-1} autoComplete="off" />
-      <input type="hidden" name="_subject" value="New inquiry from rimasanfer.com" />
-      <input type="hidden" name="_template" value="table" />
 
       <label htmlFor="name">Name</label>
       <input id="name" name="Name" type="text" required />

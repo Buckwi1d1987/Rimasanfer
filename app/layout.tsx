@@ -35,7 +35,7 @@ export const metadata: Metadata = {
       "Boutique consulting firm delivering hands-on support across business management, commercial execution, and growth strategy.",
     images: [
       {
-        url: "/og-image.png",
+        url: "/opengraph-image",
         width: 1200,
         height: 630,
         alt: "Rimasanfer Ltd"
@@ -47,11 +47,11 @@ export const metadata: Metadata = {
     title: "Rimasanfer Ltd | Embedded Business Management & Growth Execution",
     description:
       "Boutique consulting firm delivering hands-on support across business management, commercial execution, and growth strategy.",
-    images: ["/og-image.png"]
+    images: ["/opengraph-image"]
   },
   icons: {
-    icon: [{ url: "/icon.png", type: "image/png" }],
-    apple: [{ url: "/apple-icon.png", type: "image/png" }]
+    icon: [{ url: "/icon", type: "image/png" }],
+    apple: [{ url: "/apple-icon", type: "image/png" }]
   }
 };
 

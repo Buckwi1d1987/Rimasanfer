@@ -36,7 +36,8 @@ export default function PrivacyPage() {
         <h2>4. Sharing</h2>
         <p>
           We do not sell personal data. Information is shared only when required for service
-          delivery, legal compliance, or legitimate business operations.
+          delivery, legal compliance, or legitimate business operations, including secure email
+          processing providers used to deliver website inquiries.
         </p>
 
         <h2>5. Retention</h2>
