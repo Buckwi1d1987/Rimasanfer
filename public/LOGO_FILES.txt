@@ -1,4 +1,0 @@
-Add your provided logo files in this folder with these exact names:
-
-- logo-rmsf-transparent.png (preferred for dark backgrounds)
-- logo-rmsf-dark.png (optional alternative)

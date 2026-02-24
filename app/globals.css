@@ -141,6 +141,10 @@ a:hover {
   font-size: 0.95rem;
 }
 
+.mobile-nav {
+  display: none;
+}
+
 .hero {
   padding-top: 6.5rem;
 }
@@ -285,6 +289,10 @@ a:hover {
   gap: 0.5rem;
 }
 
+.hidden-field {
+  display: none;
+}
+
 label {
   font-size: 0.88rem;
   color: #d1d9e5;
@@ -306,6 +314,24 @@ input:focus,
 textarea:focus {
   outline: 2px solid rgba(183, 154, 114, 0.5);
   outline-offset: 1px;
+}
+
+.form-status {
+  margin-top: 0.3rem;
+  font-size: 0.92rem;
+}
+
+.form-status-success {
+  color: #b8e7ca;
+}
+
+.form-status-error {
+  color: #ffd6d6;
+}
+
+.form-status-error a {
+  color: #ffd6d6;
+  text-decoration: underline;
 }
 
 .site-footer {
@@ -399,6 +425,23 @@ textarea:focus {
 
   .top-nav {
     display: none;
+  }
+
+  .mobile-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 0.7rem 1rem 0.85rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(7, 19, 35, 0.96);
+    overflow-x: auto;
+  }
+
+  .mobile-nav a {
+    color: #d7e0ec;
+    font-size: 0.92rem;
+    white-space: nowrap;
   }
 
   .section {

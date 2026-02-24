@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import ContactForm from "./components/contact-form";
 
 const services = [
   {
@@ -124,6 +125,12 @@ export default function HomePage() {
             <a href="#contact">Contact</a>
           </nav>
         </div>
+        <nav className="mobile-nav" aria-label="Mobile navigation">
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#clients">Clients</a>
+          <a href="#contact">Contact</a>
+        </nav>
       </header>
 
       <main id="top">
@@ -258,23 +265,7 @@ export default function HomePage() {
               </p>
             </div>
 
-            <form className="contact-form" action="mailto:manuel@rimasanfer.com" method="post" encType="text/plain">
-              <label htmlFor="name">Name</label>
-              <input id="name" name="Name" type="text" required />
-
-              <label htmlFor="company">Company</label>
-              <input id="company" name="Company" type="text" required />
-
-              <label htmlFor="email">Work Email</label>
-              <input id="email" name="Email" type="email" required />
-
-              <label htmlFor="message">Current Priority</label>
-              <textarea id="message" name="Message" rows={4} required />
-
-              <button className="btn btn-primary" type="submit">
-                Send Inquiry
-              </button>
-            </form>
+            <ContactForm />
           </div>
         </section>
       </main>

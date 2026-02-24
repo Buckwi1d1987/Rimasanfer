@@ -32,7 +32,26 @@ export const metadata: Metadata = {
     url: "https://www.rimasanfer.com",
     title: "Rimasanfer Ltd | Embedded Business Management & Growth Execution",
     description:
-      "Boutique consulting firm delivering hands-on support across business management, commercial execution, and growth strategy."
+      "Boutique consulting firm delivering hands-on support across business management, commercial execution, and growth strategy.",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Rimasanfer Ltd"
+      }
+    ]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Rimasanfer Ltd | Embedded Business Management & Growth Execution",
+    description:
+      "Boutique consulting firm delivering hands-on support across business management, commercial execution, and growth strategy.",
+    images: ["/og-image.png"]
+  },
+  icons: {
+    icon: [{ url: "/icon.png", type: "image/png" }],
+    apple: [{ url: "/apple-icon.png", type: "image/png" }]
   }
 };
 
